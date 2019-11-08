@@ -31,7 +31,7 @@ struct Vector2 {
 
 Vector2 operator+(const Vector2& va, const Vector2 vb);
 Vector2 operator-(const Vector2& va, const Vector2 vb);
-
+Vector2 operator*(const Vector2& v, float k);
 ///内積を返す
 float Dot(const Vector2& va, const Vector2& vb);
 

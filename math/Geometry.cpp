@@ -1,4 +1,4 @@
-#include"Geometry.h"
+ï»¿#include"Geometry.h"
 #include<DxLib.h>
 #include<cmath>
 
@@ -32,6 +32,11 @@ Vector2 operator-(const Vector2& va, const Vector2 vb){
 	return Vector2(va.x - vb.x, va.y - vb.y);
 }
 
+Vector2 operator*(const Vector2& v, float k)
+{
+	return Vector2(v.x * k, v.y * k);
+}
+
 float
 Vector2::Magnitude()const {
 	return hypot(x, y);
@@ -53,13 +58,13 @@ Vector2::Normalized() {
 }
 
 
-///“àÏ‚ğ•Ô‚·
+///å†…ç©ã‚’è¿”ã™
 float
 Dot(const Vector2& va, const Vector2& vb) {
 	return va.x*vb.x + va.y*vb.y;
 }
 
-///ŠOÏ‚ğ•Ô‚·
+///å¤–ç©ã‚’è¿”ã™
 float
 Cross(const Vector2& va, const Vector2& vb) {
 	return va.x*vb.y - vb.x*va.y;
@@ -88,7 +93,7 @@ Vector2::operator-=(const Vector2& v) {
 }
 
 
-//-------‚±‚±‚©‚ç3D‚Ìƒ^[ƒ“------
+//-------ã“ã“ã‹ã‚‰3Dã®ã‚¿ãƒ¼ãƒ³------
 void
 Vector3::operator*=(float scale) {
 	x *= scale;
@@ -131,13 +136,13 @@ Vector3::Normalized() {
 }
 
 
-///“àÏ‚ğ•Ô‚·
+///å†…ç©ã‚’è¿”ã™
 float
 Dot(const Vector3& va, const Vector3& vb) {
 	return va.x*vb.x + va.y*vb.y+va.z*vb.z;
 }
 
-///ŠOÏ‚ğ•Ô‚·
+///å¤–ç©ã‚’è¿”ã™
 Vector3
 Cross(const Vector3& va, const Vector3& vb) {
 	return Vector3(va.z*vb.y-va.y*vb.z,va.z*vb.x-va.x*vb.z,va.x*vb.y - vb.x*va.y);
@@ -148,7 +153,7 @@ operator*(const Vector3& va, const Vector3& vb) {
 	return Vector3{va.x * vb.x, va.y * vb.y, va.z * vb.z};
 }
 
-///ŠOÏ‰‰Zq
+///å¤–ç©æ¼”ç®—å­
 Vector3
 operator%(const Vector3& va, const Vector3& vb) {
 	return Cross(va, vb);
